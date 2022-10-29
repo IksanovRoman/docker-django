@@ -10,7 +10,7 @@ class Shop(models.Model):
     street = models.ForeignKey('Street', on_delete=models.PROTECT)
 
     def __str__(self):
-        return self.name
+        return f"Город: {self.city}, улица: {self.street}, магазин: {self.name}"
 
 class City(models.Model):
     name = models.CharField(max_length=255)
