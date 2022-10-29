@@ -1,0 +1,25 @@
+{% extends 'shop/base.html' %}
+
+{% block content %}
+        {% if street and city %}
+            В городе {{ city }} есть улицы:
+            <ul>
+                {% for s in street %}
+                    <li> {{ s }} </li>
+                {% endfor %}
+            </ul>
+
+        {% elif city %}
+            Выбранный город: {{ city }}
+
+
+        {% elif cities %}
+            Список городов из базы данных:
+            <ul>
+                {% for c in cities %}
+                    <li> {{ c }} </li>
+                {% endfor %}
+            </ul>
+
+        {% endif %}
+{% endblock %}
